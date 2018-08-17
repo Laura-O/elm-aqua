@@ -6,7 +6,6 @@ import List exposing (..)
 import Navigation
 
 
-
 ---- MODEL ----
 
 
@@ -190,11 +189,16 @@ link name url =
 
 pageHeader : Html Msg
 pageHeader =
-    header []
-        [ section [ class "navbar-section" ]
-            [ a [ class "btn btn-link" ] [ link "Home" "#/home" ]
-            , a [ class "btn btn-link" ] [ link "About" "#/about" ]
-            , a [ class "btn btn-link" ] [ link "Values" "#/values" ]
+    div [ class "navbar-fixed" ]
+        [ nav []
+            [ div [ class "nav-wrapper" ]
+                [ ul
+                    []
+                    [ li [] [ a [] [ link "Home" "#/home" ] ]
+                    , li [] [ a [] [ link "About" "#/about" ] ]
+                    , li [] [ a [] [ link "Values" "#/values" ] ]
+                    ]
+                ]
             ]
         ]
 
